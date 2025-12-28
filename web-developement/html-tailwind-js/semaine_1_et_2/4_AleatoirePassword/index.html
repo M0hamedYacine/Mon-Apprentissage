@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Generateur  Aleatoire - Mot de passe</title>
+</head>
+<body class="h-screen flex items-center w-full bg-[#002339]">
+    <div class="px-36 ">
+        <h1 class="text-5xl font-bold text-white leading-[65px]">Generateur de <br> <span class="text-[#019f55] text7 border-solid border-b-4 border-[#019f55]  pb-4 mb-10">Mot de passe Aleatoire</span></h1>
+        <div id="display" class="w-[100%] h-14 mt-14 mb-8 bg-white text-[#333] flex items-center justify-between py-8 px-4  rounded">
+            <input type="text" id="input-Mot-De-Passe" class="text-xl font-medium border-0 outline-0 bg-transparent"  placeholder="Mot de passe">
+            <img src="/4_AleatoirePassword/images/copy.png" id="copie-du-mot-de-passe" alt="" class="w-[35px] h-[35px] mr-4 cursor-pointer">
+        </div>
+        <button id="btn-generer-MDP" class="border-0 outline-0 flex justify-center items-center bg-[#019f55] text-xl text-white font-normal rounded-md py-2 px-8 cursor-pointer"><img src="/4_AleatoirePassword/images/generate.png" alt="" class="w-[28px] mr-2">Generer Mot de passe</button>
+    </div>
+
+    <script>
+        const  btnGenererMDP = document.getElementById('btn-generer-MDP'); //variable qui va permetre d initialiser la generation d'un nouveau passe aleatoire
+        const inputMotDePasse = document.getElementById("input-Mot-De-Passe") 
+        const copieDuMotDePasse = document.getElementById("copie-du-mot-de-passe") //cette variable permettra de fair une copie diretement une copie de la valeur generer aleatoirement dans input
+
+        //taille du mot de passe
+        const tailleDuMotDePasse = 18;
+
+        const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        const lowerCase = "abcdefghijklmnopqrstuvwxyz"
+        const number = "0123456789"
+        const specialChar = "`~!@#$%^&*()-_=+[{\|;:/?.>,<}]"
+
+        const tousLesCharacteres = upperCase + lowerCase + number + specialChar;
+        
+         
+        function creationMDP() {
+            let motDePasseCree = '';
+            
+            while (tailleDuMotDePasse > motDePasseCree.length ){
+                motDePasseCree += tousLesCharacteres[Math.floor(Math.random() * tousLesCharacteres.length)];
+            }
+            inputMotDePasse.value = motDePasseCree;
+        }
+
+        // On ajoute l'écouteur d'événement sur ton bouton de copie
+copieDuMotDePasse.addEventListener('click', () => {
+    
+    // 1. Vérifier si le champ n'est pas vide
+    if (inputMotDePasse.value === "") return;
+
+    // 2. Copier la valeur de l'input
+    navigator.clipboard.writeText(inputMotDePasse.value).then(() => {
+        
+        // 3. Sauvegarder le contenu actuel (ton icône ou ton texte)
+        const contenuInitial = copieDuMotDePasse.innerHTML;
+
+        // 4. Feedback visuel : on change l'icône et on ajoute du style
+        copieDuMotDePasse.innerHTML = "✅";
+        copieDuMotDePasse.style.transform = "scale(1.3)";
+        copieDuMotDePasse.style.transition = "all 0.1s";
+
+
+        // 5. Retour à l'état initial après 2 secondes
+        setTimeout(() => {
+            copieDuMotDePasse.innerHTML = contenuInitial;
+            copieDuMotDePasse.style.transform = "scale(1)";
+        }, 150);
+
+        // 6. suprime l input 10 second apres la copie.
+        setTimeout(() => {
+            inputMotDePasse.value = ""
+        }, 10000);
+        
+        
+
+
+    }).catch(err => {
+        console.error("Erreur lors de la copie : ", err);
+    });
+});
+
+        btnGenererMDP.addEventListener('click', creationMDP);
+        
+        
+
+
+    </script>
+</body>
+</html>

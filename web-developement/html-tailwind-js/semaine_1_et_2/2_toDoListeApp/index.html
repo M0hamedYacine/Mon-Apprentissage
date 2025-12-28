@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>To Do Listes App</title>
+</head>
+<body class="m-0 p-0">
+    <div class="bg-gradient-to-br from-[#153677] to-[#4e085f] w-full min-h-[100vh] pt-[100px]">
+
+        <!--Presentation haut de page -->
+        <div class="bg-white w-3/12 mx-auto pt-10 px-8 pb-10 rounded-xl">
+            <div class="flex items-center pb-4">
+                <h2 class="text-[#002765] font-bold text-lg">To-Do Liste App</h2>
+                <img src="/2_toDoListeApp/images/icon.png" class="w-[30px] ml-[10px]" >
+            </div>
+
+            <div class="flex items-center justify-between bg-[#edeef0] rounded-lg pl-[20px] mb-[25px]">
+                <input id="input-box" type="text" placeholder="Entrer une Nouvelle Tache" class="flex-1 border-none outline-none bg-transparent p-[10x]">
+                <button id="input-btn"  class="border-none outline-none py-2 px-8 bg-[#ff5945] text-black text-lg cursor-pointer rounded-3xl">Ajouter</button>
+            </div>
+            
+                <ul id="List-container" class="text-md">
+                <!--
+                <li class="line-through
+                        relative py-3 pl-12 pr-2 cursor-pointer 
+                        before:content-[''] before:absolute before:left-2 before:top-1/2 before:-translate-y-1/2 
+                        before:w-7 before:h-7 before:rounded-full 
+                        before:bg-[url('images/checked.png')] before:bg-cover before:bg-center">
+                Tache 1
+                </li>
+                <li class="relative py-3 pl-12 pr-2 cursor-pointer 
+                        before:content-[''] before:absolute before:left-2 before:top-1/2 before:-translate-y-1/2 
+                        before:w-7 before:h-7 before:rounded-full 
+                        before:bg-[url('images/unchecked.png')] before:bg-cover before:bg-center">
+                Tache 2
+                </li>
+                <li class="relative py-3 pl-12 pr-2 cursor-pointer 
+                        before:content-[''] before:absolute before:left-2 before:top-1/2 before:-translate-y-1/2 
+                        before:w-7 before:h-7 before:rounded-full 
+                        before:bg-[url('images/unchecked.png')] before:bg-cover before:bg-center">
+                Tache 3
+                </li>
+                -->
+            </ul>
+            
+        </div>
+
+
+    </div>
+    <script src="/2_toDoListeApp/script.js"></script>
+</body>
+</html>

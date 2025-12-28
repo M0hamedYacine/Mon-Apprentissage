@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App - Easy Tutorials</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="h-screen flex items-center justify-center bg-gray-900 px-4">
+
+    <div class="w-full max-w-md bg-gradient-to-br from-green-200 to-violet-800 p-8 rounded-3xl shadow-2xl">
+        
+        <div class="flex items-center gap-4">
+            <input 
+                id="etatInput"
+                type="text" 
+                spellcheck="false"
+                placeholder="Entrez une ville" 
+                class="w-full h-14 px-6 rounded-full border-none outline-none text-gray-800 text-lg shadow-inner placeholder:text-gray-400"
+            >
+            
+            <button id="etatBtn" class="bg-white p-4 rounded-full shadow-md hover:bg-gray-100 transition-colors">
+                <img src="/1_MeteoApp/images/search.png" alt="Search" class="w-6 h-6">
+            </button>
+        </div>
+
+        <div id="error" class="hidden">
+            <p class="text-white pt-2 flex justify-left text-red-500">Erreur: le Nom de la ville n'existe pas</p>
+        </div>
+
+        <section id="infoMeteo" class="hidden">
+            <div class="flex flex-col items-center">
+            <img id="imageMeteo" src="/1_MeteoApp/images/rain.png" alt="" class="">
+            <h1 id="valeurTemp" class="text-[70px] font-bold">22°c</h1>
+            <h2 id="nomVille" class="text-2xl font-semibold">Ouagadougou</h2>
+        </div>
+
+        <!--DEtails de la meteo-->
+            <!-- humidite-->
+
+            
+
+            <div class="flex justify-between gap-3 px-4 mt-10 font-mono">
+                 <div class="flex items-start gap-2">
+                    <img src="/1_MeteoApp/images/humidity.png" alt="" class="w-10 h-10 pt-2">
+                    <div class="">
+                        <p id="humidityValeur" class="text-3xl font-semibold">50%</p>
+                        <p class="">Humidity</p>
+                    </div>
+            </div>
+
+            <div class="flex items-start gap-2">
+                    <img src="/1_MeteoApp/images/wind.png" alt="" class="w-10 h-10 pt-2">
+                    <div class="">
+                        <p id="vitesseVentValeur" class="text-3xl font-semibold">15 Km/h</p>
+                        <p class="">Vitesse du vent</p>
+                    </div>
+            </div>
+            </div>
+        </section>
+
+        
+        
+    </div>
+<script src="/1_MeteoApp/script.js"></script>
+</body>
+</html>
