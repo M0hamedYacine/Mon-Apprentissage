@@ -7,7 +7,10 @@ Ceci est un exercice pratique réalisé dans le cadre de mon apprentissage du d�
     Maîtriser les listes de navigation (<ul>, <li>) et leur stylisation.
     Appliquer des micro-interactions fluides au survol (hover states).
 
-📸 Aperçu du rendu
+
+
+
+
 💡 Ce que j'ai mis en pratique
 1. Structure Sémantique
 
